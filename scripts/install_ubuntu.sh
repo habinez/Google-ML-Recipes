@@ -12,6 +12,7 @@ pip install conda
 conda upgrade conda
 conda upgrade conda-build
 conda install anaconda -y 
+echo "export PATH=$HOME/anaconda/bin:$PATH" >> .bash_profile﻿
 conda install -c https://conda.anaconda.org/anaconda pydot
 pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0rc0-cp27-none-linux_x86_64.whl
 pip install rodeo
