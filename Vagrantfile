@@ -2,21 +2,20 @@
 # vi: set ft=ruby :
 
 $script = <<-SCRIPT
-apt-get install libtool-bin autoconf cmake -y
+apt-get install libtool-bin autoconf cmake auxlib graphviz -y
 git clone https://github.com/zeromq/libzmq && cd libzmq
 mkdir cmake-build && cd cmake-build
 cmake .. && make -j 4
 make install && sudo ldconfig
 rm -rf libzmq
 apt-get install python-pip python3-pip python-dev python-zmq -y
-pip install auxlib
 pip install conda
-conda upgrade conda
-conda upgrade conda-build
+conda upgrade conda -y
+conda upgrade conda-build -y
 conda install anaconda -y 
-conda install -c https://conda.anaconda.org/anaconda pydot
+conda install -c https://conda.anaconda.org/anaconda pydot -y
 pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0rc0-cp27-none-linux_x86_64.whl
-pip install rodeo
+pip install rodeo 
 SCRIPT
 
 $startup = <<-SCRIPT
